@@ -26,10 +26,39 @@
 
 (function(){
 
-  $(function(){
+  $("#addStudentForm").validate({
+  errorClass: "text-danger",
+  rules: {
+    first_name: {
+      required: true,
+      minlength: 2
+    },
+    last_name:  {
+      required: true,
+      minlength: 2
+    },
+    start_date: {
+      dateISO: true
 
-  	//code goes here
+    }
+  },
 
-  })
+  messages: {
+    start_date: {
+      dateISO: "Please use yyyy-mm-dd format"
+
+    },
+    first_name: {
+      required: "This field is required!",
+      minlength: "First Name must be at least 2 characters"
+    },
+    last_name: {
+      required: "This field is required!",
+      minlength: "Last Name must be at least 2 characters"
+    }
+  },
+
+
+});
 
 })();
